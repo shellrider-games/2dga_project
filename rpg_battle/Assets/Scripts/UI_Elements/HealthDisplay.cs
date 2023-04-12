@@ -10,7 +10,7 @@ public class HealthDisplay : MonoBehaviour
     [SerializeField] private float lerpSpeed = 10f;
 
     private Image _healthBar;
-    private float targetFill = 1f;
+    private float _targetFill = 1f;
 
     private void Awake()
     {
@@ -22,25 +22,24 @@ public class HealthDisplay : MonoBehaviour
 
     private void Update()
     {
-        if (Math.Abs(targetFill - _healthBar.fillAmount) > 0.001f)
+        if (Math.Abs(_targetFill - _healthBar.fillAmount) > 0.001f)
         {
-            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, targetFill, Time.deltaTime * lerpSpeed);
+            _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, _targetFill, Time.deltaTime * lerpSpeed);
         }
         else
         {
-            _healthBar.fillAmount = targetFill;
+            _healthBar.fillAmount = _targetFill;
         }
     }
 
     private void InitFill(float fill)
     {
         _healthBar.fillAmount = fill;
-        targetFill = fill;
+        _targetFill = fill;
     }
 
     private void SetTargetFill(float fill)
     {
-        Debug.Log("Updated");
-        targetFill = fill;
+        _targetFill = fill;
     }
 }
