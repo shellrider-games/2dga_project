@@ -1895,6 +1895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1148711048}
     m_Modifications:
+    - target: {fileID: 7975972635763343299, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Name
       value: HealthDisplay
@@ -1995,5 +1999,9 @@ PrefabInstance:
       propertyPath: _health
       value: 
       objectReference: {fileID: 1148711049}
+    - target: {fileID: 7975972637125396233, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}

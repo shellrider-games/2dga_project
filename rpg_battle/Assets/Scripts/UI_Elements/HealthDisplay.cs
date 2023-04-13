@@ -40,6 +40,7 @@ public class HealthDisplay : MonoBehaviour
 
     private void SetTargetFill(float fill)
     {
+        Debug.Log("SetTargetFill");
         _targetFill = fill;
     }
 }
