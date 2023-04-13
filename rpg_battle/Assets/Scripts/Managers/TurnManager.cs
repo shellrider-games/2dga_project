@@ -7,20 +7,22 @@ public class TurnManager : MonoBehaviour
 {
     public event Action OnDisableInputs;
     public event Action OnEnableInputs;
-    
+
     private bool _ignoreInput = false;
+
     [SerializeField] private Health _slime;
+    [SerializeField] private DruidAnimationController _druidAnimationController;
+
     public void OnAttackButtonClicked()
     {
         DisableInputs();
-        _slime.Damage(2);
-        StartCoroutine(WaitAndEnableInputs(2.0f));
-    }
-
-    private IEnumerator WaitAndEnableInputs(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        EnableInputs();
+        _druidAnimationController.Stomp(
+            () =>
+            {
+                _slime.Damage(2);
+                EnableInputs();
+            }
+        );
     }
 
     private void DisableInputs()

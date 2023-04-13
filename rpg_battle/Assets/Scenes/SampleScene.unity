@@ -718,6 +718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slime: {fileID: 618923064}
+  _druidAnimationController: {fileID: 1148711050}
 --- !u!1 &1107563017
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1148711048}
   - component: {fileID: 1148711049}
+  - component: {fileID: 1148711050}
   m_Layer: 0
   m_Name: Druid
   m_TagString: Untagged
@@ -850,6 +852,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitpoints: 10
   hitpoints: 10
+--- !u!114 &1148711050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148711047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d345fdf779b3604a91468843ac4d4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skeleton: {fileID: 1360247688}
+  idle: {fileID: 11400000, guid: 58b1754f7b2df6d4f80df211cb7b40d8, type: 2}
+  stomp: {fileID: 11400000, guid: 7f80a72b246282043ab8418ba278f5b5, type: 2}
 --- !u!1 &1360247687
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,8 +923,8 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: idle
-  loop: 1
+  _animationName: 
+  loop: 0
   timeScale: 1
 --- !u!23 &1360247689
 MeshRenderer:
@@ -1248,6 +1265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slime: {fileID: 0}
+  _druidAnimationController: {fileID: 0}
 --- !u!1 &1730287821
 GameObject:
   m_ObjectHideFlags: 0
