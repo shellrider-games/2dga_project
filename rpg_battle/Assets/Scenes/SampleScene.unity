@@ -574,6 +574,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 7975972636178493297, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7975972636178493299, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -795,6 +799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025030472}
   - component: {fileID: 1025030473}
+  - component: {fileID: 1025030474}
   m_Layer: 0
   m_Name: VineEffect
   m_TagString: Untagged
@@ -842,6 +847,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1025030474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025030471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77aafd623ac6e4f03a380853cb2d68a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1107563017
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d345fdf779b3604a91468843ac4d4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vineEffectAnimation: {fileID: 1025030474}
   _skeleton: {fileID: 1360247688}
   idle: {fileID: 11400000, guid: 58b1754f7b2df6d4f80df211cb7b40d8, type: 2}
   stomp: {fileID: 11400000, guid: 7f80a72b246282043ab8418ba278f5b5, type: 2}
@@ -1907,6 +1925,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7975972636178493297, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7975972636178493299, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
