@@ -11,7 +11,9 @@ public class TurnManager : MonoBehaviour
     private bool _ignoreInput = false;
 
     [SerializeField] private Health _slime;
+    [SerializeField] private Health _druid;
     [SerializeField] private DruidAnimationController _druidAnimationController;
+    [SerializeField] private SlimeProjectileEffectAnimation _slimeProjectileEffect;
 
     public void OnAttackButtonClicked()
     {
@@ -20,6 +22,7 @@ public class TurnManager : MonoBehaviour
             () =>
             {
                 _slime.Damage(2);
+                _slimeProjectileEffect.Shoot(() => _druid.Damage(2));
                 EnableInputs();
             }
         );
