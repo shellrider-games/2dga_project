@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Damage(int damage)
+    public virtual void Damage(int damage)
     {
         Hitpoints = Math.Max(Hitpoints - damage, 0);
         if (Hitpoints <= 0) Die();

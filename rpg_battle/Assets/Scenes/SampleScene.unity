@@ -524,7 +524,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618923065}
-  - component: {fileID: 618923064}
+  - component: {fileID: 618923066}
+  - component: {fileID: 618923067}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -532,20 +533,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &618923064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618923063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06277a0be7e76a24f8d4ff5615286de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHitpoints: 8
-  hitpoints: 8
 --- !u!4 &618923065
 Transform:
   m_ObjectHideFlags: 0
@@ -563,6 +550,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &618923066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618923063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d49bb078d70c5647bbaa526b21e113f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skeleton: {fileID: 1475196188}
+  idle: {fileID: 11400000, guid: d2ecc9e8e68cf2348af7b9b6ca139de5, type: 2}
+  getHit: {fileID: 11400000, guid: 8b4c6ac19c5539046a3dc977d6a50fb6, type: 2}
+--- !u!114 &618923067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618923063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82467e80bff93364fbb732d81e4c53fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitpoints: 8
+  hitpoints: 8
+  _animationController: {fileID: 618923066}
 --- !u!1001 &651296401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,11 +682,11 @@ PrefabInstance:
     - target: {fileID: 7975972636178493303, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 618923064}
+      objectReference: {fileID: 618923067}
     - target: {fileID: 7975972636178493303, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: _health
       value: 
-      objectReference: {fileID: 618923064}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
 --- !u!224 &651296402 stripped
@@ -787,7 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efa7fc5ea1e6c48a0adbb9a2afc5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slime: {fileID: 618923064}
+  _slime: {fileID: 618923067}
   _druidAnimationController: {fileID: 1148711050}
 --- !u!1 &1025030471
 GameObject:
@@ -1322,7 +1339,7 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: animation
+  _animationName: 
   loop: 1
   timeScale: 1
 --- !u!23 &1475196189
