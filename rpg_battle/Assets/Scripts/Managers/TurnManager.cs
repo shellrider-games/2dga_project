@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
     [SerializeField] private DruidAnimationController _druidAnimationController;
     [SerializeField] private SlimeAnimationController _slimeAnimationController;
 
-    public void Start()
+    public void OnEnable()
     {
         _druidAnimationController.OnTurnEnd += SlimeTurn;
     }
