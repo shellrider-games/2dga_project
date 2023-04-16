@@ -14,6 +14,7 @@ public class SlimeAnimationController : MonoBehaviour
     
     [SerializeField] private AnimationReferenceAsset idle;
     [SerializeField] private AnimationReferenceAsset getHit;
+    [SerializeField] private AnimationReferenceAsset attack;
     
     public void Start()
     {
@@ -28,9 +29,15 @@ public class SlimeAnimationController : MonoBehaviour
 
     public void Shoot(ShotHitCallback callback)
     {
-        _projectile.Shoot(() =>
+        TrackEntry track = _skeleton.state.SetAnimation(0, attack, false);
+        track.Complete += delegate
         {
-            callback();
-        });
+            _skeleton.state.SetAnimation(0, idle, true);
+            _projectile.Shoot(() =>
+            {
+                callback();
+            });
+        };
+        
     }
 }

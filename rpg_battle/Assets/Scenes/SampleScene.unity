@@ -566,6 +566,7 @@ MonoBehaviour:
   _skeleton: {fileID: 1475196188}
   idle: {fileID: 11400000, guid: d2ecc9e8e68cf2348af7b9b6ca139de5, type: 2}
   getHit: {fileID: 11400000, guid: 8b4c6ac19c5539046a3dc977d6a50fb6, type: 2}
+  attack: {fileID: 11400000, guid: 70adc9ab19f064f4cb0172062fa0a4eb, type: 2}
 --- !u!114 &618923067
 MonoBehaviour:
   m_ObjectHideFlags: 0
