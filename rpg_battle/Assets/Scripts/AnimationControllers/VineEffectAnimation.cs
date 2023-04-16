@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class VineEffectAnimation : MonoBehaviour
 {
-    public event Action OnEnemyHit; 
+    public event Action OnEnemyHit;
+    public event Action OnAnimationOver;
+    
     private Animator _animator;
     void Start()
     {
@@ -21,5 +23,10 @@ public class VineEffectAnimation : MonoBehaviour
     public void EnemyHit()
     {
         OnEnemyHit?.Invoke();
+    }
+
+    public void AnimationOver()
+    {
+        OnAnimationOver?.Invoke();
     }
 }

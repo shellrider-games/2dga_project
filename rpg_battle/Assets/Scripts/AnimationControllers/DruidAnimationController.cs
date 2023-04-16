@@ -10,15 +10,28 @@ public class DruidAnimationController : MonoBehaviour
 {
     public delegate void StompCallback();
 
+    public event Action OnTurnEnd;
+
     [SerializeField] private VineEffectAnimation _vineEffectAnimation;
 
     [SerializeField] private SkeletonAnimation _skeleton;
     [SerializeField] private AnimationReferenceAsset idle;
     [SerializeField] private AnimationReferenceAsset stomp;
+    [SerializeField] private AnimationReferenceAsset getHit;
 
     public void Start()
     {
         _skeleton.state.SetAnimation(0, idle, true);
+    }
+
+    public void OnEnable()
+    {
+        _vineEffectAnimation.OnAnimationOver += EndTurn;
+    }
+
+    public void OnDisable()
+    {
+        _vineEffectAnimation.OnAnimationOver -= EndTurn;
     }
 
     public void Stomp(StompCallback callback)
@@ -36,5 +49,16 @@ public class DruidAnimationController : MonoBehaviour
             }
             _vineEffectAnimation.OnEnemyHit += HandleCallback;
         };
+    }
+
+    public void GetHit()
+    {
+        TrackEntry track = _skeleton.state.SetAnimation(0, getHit, false);
+        track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };   
+    }
+
+    public void EndTurn()
+    {
+        OnTurnEnd?.Invoke();
     }
 }

@@ -6,6 +6,10 @@ using Spine.Unity;
 
 public class SlimeAnimationController : MonoBehaviour
 {
+    public delegate void ShotHitCallback();
+    
+    [SerializeField] private SlimeProjectileEffectAnimation _projectile;
+    
     [SerializeField] private SkeletonAnimation _skeleton;
     
     [SerializeField] private AnimationReferenceAsset idle;
@@ -20,5 +24,13 @@ public class SlimeAnimationController : MonoBehaviour
     {
         TrackEntry track = _skeleton.state.SetAnimation(0, getHit, false);
         track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };        
+    }
+
+    public void Shoot(ShotHitCallback callback)
+    {
+        _projectile.Shoot(() =>
+        {
+            callback();
+        });
     }
 }

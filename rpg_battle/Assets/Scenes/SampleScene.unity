@@ -562,6 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d49bb078d70c5647bbaa526b21e113f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectile: {fileID: 818630520}
   _skeleton: {fileID: 1475196188}
   idle: {fileID: 11400000, guid: d2ecc9e8e68cf2348af7b9b6ca139de5, type: 2}
   getHit: {fileID: 11400000, guid: 8b4c6ac19c5539046a3dc977d6a50fb6, type: 2}
@@ -805,9 +806,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slime: {fileID: 618923067}
-  _druid: {fileID: 1148711049}
+  _druid: {fileID: 1148711051}
   _druidAnimationController: {fileID: 1148711050}
-  _slimeProjectileEffect: {fileID: 818630520}
+  _slimeAnimationController: {fileID: 618923066}
 --- !u!1 &818630518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,8 +1136,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148711048}
-  - component: {fileID: 1148711049}
   - component: {fileID: 1148711050}
+  - component: {fileID: 1148711051}
   m_Layer: 0
   m_Name: Druid
   m_TagString: Untagged
@@ -1161,20 +1162,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1148711049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148711047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06277a0be7e76a24f8d4ff5615286de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHitpoints: 10
-  hitpoints: 10
 --- !u!114 &1148711050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,6 +1178,22 @@ MonoBehaviour:
   _skeleton: {fileID: 1360247688}
   idle: {fileID: 11400000, guid: 58b1754f7b2df6d4f80df211cb7b40d8, type: 2}
   stomp: {fileID: 11400000, guid: 7f80a72b246282043ab8418ba278f5b5, type: 2}
+  getHit: {fileID: 11400000, guid: e0bcfe28e5f201f4bb9232d6b735d7c3, type: 2}
+--- !u!114 &1148711051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148711047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef19fa21ee9ef2c4dbc4f1afcab6dba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitpoints: 10
+  hitpoints: 10
+  _animationController: {fileID: 1148711050}
 --- !u!1001 &1198409924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1584,7 +1587,6 @@ GameObject:
   - component: {fileID: 1515600100}
   - component: {fileID: 1515600099}
   - component: {fileID: 1515600098}
-  - component: {fileID: 1515600101}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1642,22 +1644,6 @@ Transform:
   m_Father: {fileID: 1392879274}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1515600101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515600097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83efa7fc5ea1e6c48a0adbb9a2afc5eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slime: {fileID: 0}
-  _druid: {fileID: 0}
-  _druidAnimationController: {fileID: 0}
-  _slimeProjectileEffect: {fileID: 0}
 --- !u!1001 &1567470813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2201,11 +2187,11 @@ PrefabInstance:
     - target: {fileID: 7975972636178493303, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 1148711049}
+      objectReference: {fileID: 1148711051}
     - target: {fileID: 7975972636178493303, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: _health
       value: 
-      objectReference: {fileID: 1148711049}
+      objectReference: {fileID: 0}
     - target: {fileID: 7975972637125396233, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_IsActive
       value: 1
