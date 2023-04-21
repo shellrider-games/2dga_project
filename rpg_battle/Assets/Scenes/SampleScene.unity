@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 618923065}
   - component: {fileID: 618923066}
   - component: {fileID: 618923067}
+  - component: {fileID: 618923068}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -582,6 +583,20 @@ MonoBehaviour:
   maxHitpoints: 8
   hitpoints: 8
   _animationController: {fileID: 618923066}
+--- !u!114 &618923068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618923063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097e8f93b10ace34ebf4faea5bb3f346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeAnimationController: {fileID: 618923066}
+  slimeHealth: {fileID: 618923067}
 --- !u!1001 &651296401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -806,9 +821,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83efa7fc5ea1e6c48a0adbb9a2afc5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slime: {fileID: 618923067}
+  _slime: {fileID: 618923068}
   _druid: {fileID: 1148711052}
-  _slimeAnimationController: {fileID: 618923066}
 --- !u!1 &818630518
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public event Action<int, int> OnHealthUpdated;
-    public event Action<int> OnDamageTaken;
 
     [SerializeField] private int maxHitpoints = 10;
     [SerializeField] private int hitpoints = 10;

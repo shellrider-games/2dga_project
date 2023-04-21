@@ -8,9 +8,8 @@ public class TurnManager : MonoBehaviour
     public event Action OnDisableInputs;
     public event Action OnEnableInputs;
 
-    [SerializeField] private Health _slime;
+    [SerializeField] private Slime _slime;
     [SerializeField] private Druid _druid;
-    [SerializeField] private SlimeAnimationController _slimeAnimationController;
 
     public void OnEnable()
     {
@@ -24,7 +23,7 @@ public class TurnManager : MonoBehaviour
 
     public void SlimeTurn()
     {
-        _slimeAnimationController.Shoot(
+        _slime.Shoot(
             () =>
             {
                 _druid.Damage(2); 
