@@ -10,6 +10,7 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] private Slime _slime;
     [SerializeField] private Druid _druid;
+    [SerializeField] private GameObject gui;
 
     public void OnEnable()
     {
@@ -30,7 +31,11 @@ public class TurnManager : MonoBehaviour
                 EnableInputs();
             }
         );
-        
+    }
+
+    public void Start()
+    {
+        StartCoroutine(EnableUIAfterSeconds(5.2f));
     }
 
     public void OnAttackButtonClicked()
@@ -49,5 +54,18 @@ public class TurnManager : MonoBehaviour
     private void EnableInputs()
     {
         OnEnableInputs?.Invoke();
+    }
+
+    private void ActivateUI()
+    {
+        _slime.EnableHealthDisplay();
+        _druid.EnableHealthDisplay();
+        gui.SetActive(true);
+    }
+    
+    private IEnumerator EnableUIAfterSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
+        ActivateUI();
     }
 }

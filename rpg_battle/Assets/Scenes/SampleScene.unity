@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &63866650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+  m_PrefabInstance: {fileID: 7975972636515938163}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362824768
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +313,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -407,13 +413,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.72, y: 0.34, z: -10}
+  m_LocalPosition: {x: 4.3, y: 0.34, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &519420033
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0864f2c83329e47288f0b7a4656ef2f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &551381301
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slimeAnimationController: {fileID: 618923066}
   slimeHealth: {fileID: 618923067}
+  healthDisplay: {fileID: 889075217}
 --- !u!1001 &651296401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,6 +634,10 @@ PrefabInstance:
     - target: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Name
       value: HealthDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975972636178493297, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -823,6 +854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slime: {fileID: 618923068}
   _druid: {fileID: 1148711052}
+  gui: {fileID: 1392879273}
 --- !u!1 &818630518
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +901,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileEventEmitter: {fileID: 979298511}
+--- !u!1 &889075217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+  m_PrefabInstance: {fileID: 651296401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979298507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,8 +1119,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107563017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.75, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -2.7916, z: 0}
+  m_LocalScale: {x: 1, y: 0.9876, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1376915946}
@@ -1153,6 +1190,7 @@ GameObject:
   - component: {fileID: 1148711050}
   - component: {fileID: 1148711051}
   - component: {fileID: 1148711052}
+  - component: {fileID: 1148711053}
   m_Layer: 0
   m_Name: Druid
   m_TagString: Untagged
@@ -1168,7 +1206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148711047}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: -5.19, z: 1}
+  m_LocalPosition: {x: -18.18, y: -5.19, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1194,6 +1232,7 @@ MonoBehaviour:
   idle: {fileID: 11400000, guid: 58b1754f7b2df6d4f80df211cb7b40d8, type: 2}
   stomp: {fileID: 11400000, guid: 7f80a72b246282043ab8418ba278f5b5, type: 2}
   getHit: {fileID: 11400000, guid: e0bcfe28e5f201f4bb9232d6b735d7c3, type: 2}
+  walk: {fileID: 11400000, guid: 135012411cd8ae64d8d42cd0f8468112, type: 2}
 --- !u!114 &1148711051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1262,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   druidAnimationController: {fileID: 1148711050}
   druidHealth: {fileID: 1148711051}
+  healthDisplay: {fileID: 63866650}
+--- !u!95 &1148711053
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148711047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5b6f626ecbf44384b78f5345f13819b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &1198409924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1463,7 +1523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1392879274
 Transform:
   m_ObjectHideFlags: 0
@@ -6950,6 +7010,10 @@ PrefabInstance:
     - target: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Name
       value: HealthDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975972636178403468, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7975972636178493296, guid: fe66522fb88786f4898b8d3f0dfd63f6, type: 3}
       propertyPath: m_Camera

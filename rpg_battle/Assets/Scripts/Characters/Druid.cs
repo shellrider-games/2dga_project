@@ -9,6 +9,7 @@ public class Druid : MonoBehaviour
     
     [SerializeField] private DruidAnimationController druidAnimationController;
     [SerializeField] private DruidHealth druidHealth;
+    [SerializeField] private GameObject healthDisplay;
 
     public void Start()
     {
@@ -18,5 +19,10 @@ public class Druid : MonoBehaviour
     public void Stomp(DruidAnimationController.StompCallback callback) => druidAnimationController.Stomp(callback);
 
     public void Damage(int damage) => druidHealth.Damage(damage);
+    
+    public void EnableHealthDisplay()
+    {
+        healthDisplay.SetActive(true);
+    }
 
 }

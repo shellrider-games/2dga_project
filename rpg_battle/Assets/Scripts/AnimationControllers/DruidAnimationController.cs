@@ -18,10 +18,11 @@ public class DruidAnimationController : MonoBehaviour
     [SerializeField] private AnimationReferenceAsset idle;
     [SerializeField] private AnimationReferenceAsset stomp;
     [SerializeField] private AnimationReferenceAsset getHit;
+    [SerializeField] private AnimationReferenceAsset walk;
 
     public void Start()
     {
-        _skeleton.state.SetAnimation(0, idle, true);
+        _skeleton.state.SetAnimation(0, walk, true);
     }
 
     public void OnEnable()
@@ -34,6 +35,11 @@ public class DruidAnimationController : MonoBehaviour
         _vineEffectAnimation.OnAnimationOver -= EndTurn;
     }
 
+    public void Idle()
+    {
+        _skeleton.state.SetAnimation(0, idle, true);
+    }
+    
     public void Stomp(StompCallback callback)
     {
         TrackEntry track = _skeleton.state.SetAnimation(0, stomp, false);
