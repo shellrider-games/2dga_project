@@ -807,8 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slime: {fileID: 618923067}
-  _druid: {fileID: 1148711051}
-  _druidAnimationController: {fileID: 1148711050}
+  _druid: {fileID: 1148711052}
   _slimeAnimationController: {fileID: 618923066}
 --- !u!1 &818630518
 GameObject:
@@ -1139,6 +1138,7 @@ GameObject:
   - component: {fileID: 1148711048}
   - component: {fileID: 1148711050}
   - component: {fileID: 1148711051}
+  - component: {fileID: 1148711052}
   m_Layer: 0
   m_Name: Druid
   m_TagString: Untagged
@@ -1195,6 +1195,20 @@ MonoBehaviour:
   maxHitpoints: 10
   hitpoints: 10
   _animationController: {fileID: 1148711050}
+--- !u!114 &1148711052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148711047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ade9c41ba431a4fba121612340be90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  druidAnimationController: {fileID: 1148711050}
+  druidHealth: {fileID: 1148711051}
 --- !u!1001 &1198409924
 PrefabInstance:
   m_ObjectHideFlags: 0
