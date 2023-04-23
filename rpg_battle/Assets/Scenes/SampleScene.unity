@@ -1603,8 +1603,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Victory!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9ea0b8080604fa94384c2f4c6f581bf1, type: 2}
-  m_sharedMaterial: {fileID: 458618890281961851, guid: 9ea0b8080604fa94384c2f4c6f581bf1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 07aa2b5afcccd44bea94509c806598ab, type: 2}
+  m_sharedMaterial: {fileID: -7772273673066533245, guid: 07aa2b5afcccd44bea94509c806598ab, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1628,8 +1628,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 158
+  m_fontSizeBase: 158
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
