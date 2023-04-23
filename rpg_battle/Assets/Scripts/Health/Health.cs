@@ -4,6 +4,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public event Action<int, int> OnHealthUpdated;
+    public event Action OnDeath;
 
     [SerializeField] private int maxHitpoints = 10;
     [SerializeField] private int hitpoints = 10;
@@ -36,6 +37,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
+        OnDeath?.Invoke();
         Destroy(transform.gameObject);
     }
 }

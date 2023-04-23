@@ -10,7 +10,9 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] private Slime _slime;
     [SerializeField] private Druid _druid;
-    [SerializeField] private GameObject gui;
+    
+    [SerializeField] private GameObject attackButton;
+    [SerializeField] private GameObject victoryText;
 
     public void OnEnable()
     {
@@ -36,8 +38,22 @@ public class TurnManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine(EnableUIAfterSeconds(5.2f));
+        _slime.OnDeath += Victory;
     }
 
+    public void Victory()
+    {
+        attackButton.SetActive(false);
+        _druid.DisableHealthDisplay();
+        StartCoroutine(ActivateVictoryTextAfterSeconds(1));
+    }
+
+    public IEnumerator ActivateVictoryTextAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        victoryText.SetActive(true);
+    }
+    
     public void OnAttackButtonClicked()
     {
         DisableInputs();
@@ -60,7 +76,7 @@ public class TurnManager : MonoBehaviour
     {
         _slime.EnableHealthDisplay();
         _druid.EnableHealthDisplay();
-        gui.SetActive(true);
+        attackButton.SetActive(true);
     }
     
     private IEnumerator EnableUIAfterSeconds(float time)

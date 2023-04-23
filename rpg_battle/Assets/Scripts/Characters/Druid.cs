@@ -19,10 +19,14 @@ public class Druid : MonoBehaviour
     public void Stomp(DruidAnimationController.StompCallback callback) => druidAnimationController.Stomp(callback);
 
     public void Damage(int damage) => druidHealth.Damage(damage);
-    
+
     public void EnableHealthDisplay()
     {
         healthDisplay.SetActive(true);
     }
 
+    public void DisableHealthDisplay()
+    {
+        healthDisplay.SetActive(false);
+    }
 }
