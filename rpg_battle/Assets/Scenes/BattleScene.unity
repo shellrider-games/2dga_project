@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 618923066}
   - component: {fileID: 618923067}
   - component: {fileID: 618923068}
+  - component: {fileID: 618923069}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -647,6 +648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d49bb078d70c5647bbaa526b21e113f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hurtAudio: {fileID: 8300000, guid: 820bd7fee15ed644f8303493ff9a2def, type: 3}
+  _audio: {fileID: 618923069}
   _projectile: {fileID: 818630520}
   _skeleton: {fileID: 1475196188}
   idle: {fileID: 11400000, guid: d2ecc9e8e68cf2348af7b9b6ca139de5, type: 2}
@@ -682,6 +685,102 @@ MonoBehaviour:
   slimeAnimationController: {fileID: 618923066}
   slimeHealth: {fileID: 618923067}
   healthDisplay: {fileID: 889075217}
+--- !u!82 &618923069
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618923063}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &651296401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -925,6 +1024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818630519}
   - component: {fileID: 818630520}
+  - component: {fileID: 818630521}
   m_Layer: 0
   m_Name: SlimeProjectileEffect
   m_TagString: Untagged
@@ -960,7 +1060,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9015864a46cf67a43afb8165ef9f32f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audio: {fileID: 818630521}
   _projectileEventEmitter: {fileID: 979298511}
+--- !u!82 &818630521
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818630518}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f87e964a6db1ae0498ffc8c45cdded2c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &884019328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d345fdf779b3604a91468843ac4d4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hurtAudio: {fileID: 8300000, guid: 99d03473334b23b419592a7dd22cec3e, type: 3}
   _stepAudioClips:
   - {fileID: 8300000, guid: 87ca2cc25db0c2c4f8fa57c2bc32e673, type: 3}
   - {fileID: 8300000, guid: 7494d5d38803509479c35b7ae178a7e1, type: 3}

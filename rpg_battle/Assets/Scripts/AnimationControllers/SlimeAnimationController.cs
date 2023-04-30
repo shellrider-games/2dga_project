@@ -7,7 +7,9 @@ using Spine.Unity;
 public class SlimeAnimationController : MonoBehaviour
 {
     public delegate void ShotHitCallback();
-    
+
+    [SerializeField] private AudioClip _hurtAudio;
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private SlimeProjectileEffectAnimation _projectile;
     
     [SerializeField] private SkeletonAnimation _skeleton;
@@ -24,7 +26,8 @@ public class SlimeAnimationController : MonoBehaviour
     public void GetHit()
     {
         TrackEntry track = _skeleton.state.SetAnimation(0, getHit, false);
-        track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };        
+        track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };
+        _audio.PlayOneShot(_hurtAudio);
     }
 
     public void Shoot(ShotHitCallback callback)

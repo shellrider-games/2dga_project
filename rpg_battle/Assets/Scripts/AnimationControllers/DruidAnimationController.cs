@@ -13,6 +13,7 @@ public class DruidAnimationController : MonoBehaviour
 
     public event Action OnTurnEnd;
 
+    [SerializeField] private AudioClip _hurtAudio;
     [SerializeField] private AudioClip[] _stepAudioClips;
     [SerializeField] private AudioSource _audio;
     [SerializeField] private VineEffectAnimation _vineEffectAnimation;
@@ -76,7 +77,8 @@ public class DruidAnimationController : MonoBehaviour
     public void GetHit()
     {
         TrackEntry track = _skeleton.state.SetAnimation(0, getHit, false);
-        track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };   
+        track.Complete += delegate { _skeleton.state.SetAnimation(0, idle, true); };
+        _audio.PlayOneShot(_hurtAudio);
     }
 
     public void EndTurn()

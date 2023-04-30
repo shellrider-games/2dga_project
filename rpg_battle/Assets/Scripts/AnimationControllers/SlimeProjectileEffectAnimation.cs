@@ -8,7 +8,8 @@ public class SlimeProjectileEffectAnimation : MonoBehaviour
     public delegate void OnShotEnd();
 
     private OnShotEnd _callback = null;
-    
+
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private SlimeProjectileEventEmitter _projectileEventEmitter;
 
 
@@ -31,6 +32,7 @@ public class SlimeProjectileEffectAnimation : MonoBehaviour
 
     public void Shoot(OnShotEnd callback)
     {
+        _audio.Play();
         _callback = callback;
         _projectileEventEmitter.gameObject.SetActive(true);
     }
