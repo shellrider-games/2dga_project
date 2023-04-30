@@ -1187,7 +1187,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 288c1d12bd88a514797f7d8e3714d222, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1613,6 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d345fdf779b3604a91468843ac4d4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stompAudio: {fileID: 8300000, guid: ad53b399c8b32484e802ff24bb540e70, type: 3}
   _hurtAudio: {fileID: 8300000, guid: 99d03473334b23b419592a7dd22cec3e, type: 3}
   _stepAudioClips:
   - {fileID: 8300000, guid: 87ca2cc25db0c2c4f8fa57c2bc32e673, type: 3}
@@ -2193,7 +2194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6e4b76837b3e264499c3f6f487ce9661, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

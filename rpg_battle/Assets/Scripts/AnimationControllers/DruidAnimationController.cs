@@ -13,6 +13,7 @@ public class DruidAnimationController : MonoBehaviour
 
     public event Action OnTurnEnd;
 
+    [SerializeField] private AudioClip _stompAudio;
     [SerializeField] private AudioClip _hurtAudio;
     [SerializeField] private AudioClip[] _stepAudioClips;
     [SerializeField] private AudioSource _audio;
@@ -64,6 +65,7 @@ public class DruidAnimationController : MonoBehaviour
         track.Event += delegate(TrackEntry _, Event e)
         {
             if (e.Data.Name != "vineSpawn" || _vineEffectAnimation is null) return;
+            _audio.PlayOneShot(_stompAudio);
             _vineEffectAnimation.Trigger();
             void HandleCallback()
             {
