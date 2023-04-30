@@ -5,6 +5,7 @@ using Spine;
 using UnityEngine;
 using Spine.Unity;
 using Event = Spine.Event;
+using Random = UnityEngine.Random;
 
 public class DruidAnimationController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DruidAnimationController : MonoBehaviour
 
     public event Action OnTurnEnd;
 
+    [SerializeField] private AudioClip[] _stepAudioClips;
+    [SerializeField] private AudioSource _audio;
     [SerializeField] private VineEffectAnimation _vineEffectAnimation;
 
     [SerializeField] private SkeletonAnimation _skeleton;
@@ -22,9 +25,22 @@ public class DruidAnimationController : MonoBehaviour
 
     public void Start()
     {
+        _skeleton.state.Event += delegate(TrackEntry entry, Event e)
+        {
+            if (e.Data.Name == "step")
+            {
+                PlayRandomStepSound();
+            }
+        };
         _skeleton.state.SetAnimation(0, walk, true);
     }
 
+    private void PlayRandomStepSound()
+    {
+        int index = Random.Range(0, _stepAudioClips.Length - 1);
+        _audio.PlayOneShot(_stepAudioClips[index]);
+    }
+    
     public void OnEnable()
     {
         _vineEffectAnimation.OnAnimationOver += EndTurn;

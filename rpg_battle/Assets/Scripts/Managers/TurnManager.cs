@@ -8,6 +8,8 @@ public class TurnManager : MonoBehaviour
     public event Action OnDisableInputs;
     public event Action OnEnableInputs;
 
+    [SerializeField] private AudioSource _battleMusic;
+
     [SerializeField] private Slime _slime;
     [SerializeField] private Druid _druid;
     
@@ -77,6 +79,7 @@ public class TurnManager : MonoBehaviour
         _slime.EnableHealthDisplay();
         _druid.EnableHealthDisplay();
         attackButton.SetActive(true);
+        _battleMusic.Play();
     }
     
     private IEnumerator EnableUIAfterSeconds(float time)
