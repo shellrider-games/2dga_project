@@ -9,6 +9,7 @@ public class TurnManager : MonoBehaviour
     public event Action OnEnableInputs;
 
     [SerializeField] private AudioSource _battleMusic;
+    [SerializeField] private AudioSource _victoryMusic;
 
     [SerializeField] private Slime _slime;
     [SerializeField] private Druid _druid;
@@ -53,6 +54,8 @@ public class TurnManager : MonoBehaviour
     public IEnumerator ActivateVictoryTextAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        _battleMusic.Stop();
+        _victoryMusic.Play();
         victoryText.SetActive(true);
     }
     
